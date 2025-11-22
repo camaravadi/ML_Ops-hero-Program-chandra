@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/camaravadi/ML_OPS-HERO-PROGRAM.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t avg-app .'
+            }
+        }
+
+        stage('Run avg.py') {
+            steps {
+                sh 'docker run --rm avg-app'
+            }
+        }
+    }
+}
