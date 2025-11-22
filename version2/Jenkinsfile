@@ -8,17 +8,10 @@ pipeline {
             }
         }
 
-        stage('Show workspace') {
-            steps {
-                sh 'pwd'
-                sh 'ls -R'
-            }
-        }
-
         stage('Run avg.py') {
             steps {
                 dir('version2/app') {
-                    sh 'python3 avg.py'
+                    bat 'python avg.py'
                 }
             }
         }
