@@ -1,19 +1,11 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/camaravadi/ML_OPS-HERO-PROGRAM-chandra.git'
-            }
-        }
-
-        stage('Run avg.py') {
-            steps {
-                dir('version2/app') {
-                    bat 'python avg.py'
-                }
-            }
-        }
+  agent any
+  stages {
+    stage('Run avg.py') {
+      steps {
+        bat 'python avg.py'
+      }
     }
+  }
 }
+
