@@ -2,21 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/camaravadi/ML_OPS-HERO-PROGRAM.git'
+                git branch: 'main', url: 'https://github.com/camaravadi/ML_OPS-HERO-PROGRAM-chandra.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Show workspace') {
             steps {
-                sh 'docker build -t avg-app .'
+                sh 'pwd'
+                sh 'ls -R'
             }
         }
 
         stage('Run avg.py') {
             steps {
-                sh 'docker run --rm avg-app'
+                dir('version2/app') {
+                    sh 'python3 avg.py'
+                }
             }
         }
     }
