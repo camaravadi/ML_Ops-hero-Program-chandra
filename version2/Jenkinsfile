@@ -1,11 +1,22 @@
 pipeline {
-  agent any
-  stages {
-    stage('Run avg.py') {
-      steps {
-        bat 'python avg.py'
-      }
+    agent {
+        docker {
+            image 'python:3.10'
+        }
     }
-  }
-}
 
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Run avg.py') {
+            steps {
+                sh 'python avg.py'
+            }
+        }
+    }
+}
