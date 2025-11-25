@@ -15,7 +15,7 @@ pipeline {
 
         stage('Run avg.py') {
             steps {
-                sh 'python C:\mlopsprj\ML_Ops-hero-Program-chandra\version2\app\avg.py'
+                sh 'python avg.py'
             }
         }
     }
