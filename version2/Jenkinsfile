@@ -15,7 +15,7 @@ pipeline {
 
         stage('Run avg.py') {
             steps {
-                sh 'python avg.py'
+               sh 'python version2/app/avg.py'
             }
         }
     }
