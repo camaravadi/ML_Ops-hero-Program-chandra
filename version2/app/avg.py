@@ -11,4 +11,5 @@ average = total / len(numbers)
 
 # Print the result
 print("My numbers are:", numbers)
-print("The average is:", average)
+print("My average is:", average)
+print("This is not average")
