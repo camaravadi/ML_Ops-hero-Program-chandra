@@ -10,5 +10,5 @@ total = sum(numbers)
 average = total / len(numbers)
 
 # Print the result
-print("The numbers are:", numbers)
+print("My numbers are:", numbers)
 print("The average is:", average)
