@@ -12,4 +12,4 @@ average = total / len(numbers)
 # Print the result
 print("My numbers are:", numbers)
 print("My average is:", average)
-print("The average value is not good")
+print("The economy is picking up")
